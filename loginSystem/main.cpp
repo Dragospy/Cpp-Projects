@@ -8,7 +8,7 @@ using namespace std;
 void registerUser(string username, string password){
     //attempt to find file.
     string userDetails;
-    ifstream userFile("Documents/Development/C-Development/loginSystem/DB/"+username+".txt");
+    ifstream userFile("DB/"+username+".txt");
 
     //check if user file already exists
     if (getline (userFile, userDetails))
@@ -20,7 +20,7 @@ void registerUser(string username, string password){
     }
 
     //if it doesn't then create a file, with the username as the name of the file, and store the password
-    ofstream MyFile("Documents/Development/C-Development/loginSystem/DB/"+username+".txt");
+    ofstream MyFile("DB/"+username+".txt");
 
     MyFile << password;
     
@@ -32,7 +32,7 @@ void registerUser(string username, string password){
 void loginUser(string username, string password) {
     //atempt to find file
     string userDetails;
-    ifstream userFile("Documents/Development/C-Development/loginSystem/DB/"+username+".txt");
+    ifstream userFile("DB/"+username+".txt");
 
     //check if user file exists
     getline (userFile, userDetails);
